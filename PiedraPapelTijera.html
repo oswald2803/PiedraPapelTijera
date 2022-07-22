@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Piedra, Papel o Tijera</title>
+
+    <script>
+
+        //Proceso de Elección del Jugador
+        do {
+            var eleccionUsuario = prompt("Bienvenido. Escoja su arma: \n(1) <--> Piedra  \n(2) <--> Papel  \n(3) <--> Tijera \n(0) <--> Salir");
+            switch (parseInt(eleccionUsuario)) {
+                case 1: alert("Escogió Piedra")
+                    break;
+
+                case 2: alert("Escogió Papel")
+                    break;
+
+                case 3: alert("Escogió Tijera")
+                    break;
+
+                case 0: alert("Gracias por jugar")
+                    break;
+
+                default: alert("Su opción no es válida, ingrese un número del 1 al 3");
+                    break;
+            }
+
+            //Proceso de Elección de la Computadora
+            if (eleccionUsuario == 1 || eleccionUsuario == 2 || eleccionUsuario == 3) {
+                var eleccionPC = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+                switch (eleccionPC) {
+
+                    case 1: alert("La Máquina escogió Piedra");
+                        if (eleccionUsuario == 1) {
+                            alert("Hay un empate");
+                        }
+                        else if (eleccionUsuario == 2) {
+                            alert("Ganaste");
+                        }
+                        else if (eleccionUsuario == 3) {
+                            alert("Perdiste");
+                        }
+                        break;
+
+                    case 2: alert("La Máquina escogió Papel");
+                        if (eleccionUsuario == 2) {
+                            alert("Hay un empate");
+                        }
+                        else if (eleccionUsuario == 3) {
+                            alert("Ganaste");
+                        }
+                        else if (eleccionUsuario == 1) {
+                            alert("Perdiste");
+                        }
+                        break;
+
+                    case 3: alert("La Máquina escogió Tijera");
+                        if (eleccionUsuario == 3) {
+                            alert("Hay un empate");
+                        }
+                        else if (eleccionUsuario == 1) {
+                            alert("Ganaste");
+                        }
+                        else if (eleccionUsuario == 2) {
+                            alert("Perdiste");
+                        }
+                        break;
+                }
+            }
+        } while (eleccionUsuario != 0);
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
